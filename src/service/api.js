@@ -3,11 +3,6 @@ const BASE_URL = 'https://api.themoviedb.org/3/';
 
 export const fetchTrend = () => {
   return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}`).then(
-    response => console.log(response.json())
+    response => console.log('1')
   );
-};
-
-console.log(fetchTrend());
-export const App = () => {
-  return <div>React homework template</div>;
 };
