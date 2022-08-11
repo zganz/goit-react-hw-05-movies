@@ -1,13 +1,28 @@
-const API_KEY = 'de45d36e881aeb0e75823e553c4d37c7';
-const BASE_URL = 'https://api.themoviedb.org/3/';
+import { Routes, Route } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import Navigation from 'Navigation/Navigation';
+import { NotFound } from '../pages/NotFound';
+import { Movie } from '../pages/Movie';
+import { PageReview } from 'pages/PageReview';
+import { PageCast } from 'pages/PageCast';
 
-export const fetchTrend = () => {
-  return fetch(`${BASE_URL}trending/movie/day?api_key=${API_KEY}`).then(
-    response => console.log(response.json())
-  );
-};
+const Home = React.lazy(() => import('../pages/Home'));
 
-console.log(fetchTrend());
 export const App = () => {
-  return <div>React homework template</div>;
+  return (
+    <>
+      <Navigation />
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies/:movieId" element={<Movie />}>
+            <Route path="review" element={<PageReview />} />
+            <Route path="cast" element={<PageCast />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </>
+  );
 };

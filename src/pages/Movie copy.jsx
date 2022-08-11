@@ -1,8 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
-import { fetchData } from '../../service/api';
+import { fetchData } from '../service/api';
 import { useState } from 'react';
 
-export const MovieDetails = () => {
+export const Movie = () => {
   const { movieId } = useParams();
   const [imgUrl, setImgUrl] = useState('');
   const [title, setTitle] = useState('');
@@ -43,13 +43,12 @@ export const MovieDetails = () => {
       <h3>Aditional information</h3>
       <ul>
         <li>
-          <Link to={'cast'}>Cast</Link>
+          <Link to={'/'}>Cast</Link>
         </li>
         <li>
-          <Link to={'review'}>Review</Link>
+          <Link to={'/'}>Review</Link>
         </li>
       </ul>
-      <hr />
     </main>
   );
 };
