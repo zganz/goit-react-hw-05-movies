@@ -2,7 +2,7 @@ import { fetchData } from '../service/api';
 import { MoviesList } from '../components/MoviesList/MoviesList';
 import { useState, useEffect } from 'react';
 
-const Home = () => {
+export const Home = () => {
   const [trends, setTrends] = useState([]);
   // console.log(trends);
 
@@ -18,5 +18,3 @@ const Home = () => {
 
   return <MoviesList movies={trends} />;
 };
-
-export default Home;
