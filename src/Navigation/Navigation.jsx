@@ -9,6 +9,7 @@ const Navigation = () => (
     <NavLink to="/movies" className={css.link}>
       Movies
     </NavLink>
+    <hr />
   </nav>
 );
 

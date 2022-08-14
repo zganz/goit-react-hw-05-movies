@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Home = () => {
   const [trends, setTrends] = useState([]);
+  // console.log(trends);
 
   useEffect(() => {
     fetchData('trends').then(data => {
