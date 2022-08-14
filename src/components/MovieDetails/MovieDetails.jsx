@@ -11,7 +11,7 @@ export const MovieDetails = () => {
   const [genres, setGenres] = useState('');
 
   fetchData('details', movieId).then(data => {
-    console.log(data);
+    // console.log(data);
     const path = data.poster_path;
     const title = data.title;
     const rating = data.popularity;

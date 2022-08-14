@@ -1,11 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Navigation from 'Navigation/Navigation';
-// import { NotFound } from '../pages/NotFound';
-// import { Movie } from '../pages/Movie';
-// import { PageReview } from 'pages/PageReview';
-// import { PageCast } from 'pages/PageCast';
-// import { PageSearchMovie } from '../pages/PageSearchMovie';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const NotFound = React.lazy(() => import('../pages/NotFound'));
