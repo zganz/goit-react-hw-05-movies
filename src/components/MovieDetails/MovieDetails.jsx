@@ -1,9 +1,12 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, NavLink } from 'react-router-dom';
 import { fetchData } from '../../service/api';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const MovieDetails = () => {
   const { movieId } = useParams();
+  const location = useLocation();
+  const [backPath] = useState(location.state?.from ?? '/');
   const [imgUrl, setImgUrl] = useState('');
   const [title, setTitle] = useState('');
   const [rating, setRating] = useState('');
@@ -27,10 +30,10 @@ export const MovieDetails = () => {
 
   return (
     <main>
+      <p>
+        <NavLink to={backPath}>Go back</NavLink>
+      </p>
       <div>
-        <p>
-          <Link to={'/'}>Go back</Link>
-        </p>
         <img src={imgUrl} alt="" width={300} />
         <h2>{title}</h2>
         <b>User Score: {rating}</b>
